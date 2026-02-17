@@ -7,21 +7,32 @@ using namespace std;
 
 void quickSort(int a[], int left, int right)
 {
+
     if (left < right)
     {
         int p = a[(left + right) / 2];
         int i = left, j = right;
+        cout << "p = " << p << endl;
         while (i <= j)
         {
             while (a[i] < p)
+            {
                 i++;
+            }
             while (a[j] > p)
+            {
                 j--;
+            }
             if (i <= j)
             {
                 swap(a[i], a[j]);
                 i++;
                 j--;
+                for (int i = left; i <= right; i++)
+                {
+                    cout << a[i] << " ";
+                }
+                cout << endl;
             }
         }
         quickSort(a, left, j);
@@ -31,8 +42,16 @@ void quickSort(int a[], int left, int right)
 
 int main()
 {
-    int ex[] = {1, 34, 56, 32, 53, 2, 8};
+    int ex[] = {78, 6, 82, 67, 55, 44, 34};
     int N = sizeof(ex) / sizeof(ex[0]);
+
+    cout << "Исходный массив: ";
+    for (int val : ex)
+    {
+        cout << val << " ";
+    }
+    cout << endl;
+
     quickSort(ex, 0, N - 1);
 
     cout << "Отсортированный массив: ";
