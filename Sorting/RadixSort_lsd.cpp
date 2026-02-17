@@ -14,28 +14,31 @@ int digit(int num, int d)
 
 void radixSortLSD(int A[], int N, int m, int P = 10)
 {
+    // Карзины для чисел
     int **d = new int *[P];
     for (int i = 0; i < P; i++)
     {
         d[i] = new int[N];
     }
-
+    // Счётчик элементов в каждой карзине
     int *ds = new int[P]();
 
+    // Сортировка по каждому разряду от меньшего в большему
     for (int i = 1; i <= m; i++)
     {
+        // Очистка карзин
         for (int b = 0; b < P; b++)
         {
             ds[b] = 0;
         }
-
+        // Распределение по карзинам
         for (int j = 0; j < N; j++)
         {
             int di = digit(A[j], i);
             d[di][ds[di]] = A[j];
             ds[di]++;
         }
-
+        // Вытаскиваем из карзин элементы уже в отсортированном виде
         int pos = 0;
         for (int b = 0; b < P; b++)
         {
@@ -46,6 +49,7 @@ void radixSortLSD(int A[], int N, int m, int P = 10)
             }
         }
     }
+    // Очистка
     for (int i = 0; i < P; i++)
     {
         delete[] d[i];
