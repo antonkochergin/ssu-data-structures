@@ -5,9 +5,9 @@ void siftDown(int A[], int i, int N)
 {
     while (true)
     {
-        int parent = i;        // полагаем, что i-тый элемент является максимальным
-        int left = 2 * i + 1;  // левый ребенок
-        int right = 2 * i + 2; // правый ребенок
+        int parent = i; // i элемент является максимальным
+        int left = 2 * i + 1;
+        int right = 2 * i + 2;
 
         // если есть левый ребенок, находим максимум между ним и родителем
         if (left < N && A[left] > A[parent])
