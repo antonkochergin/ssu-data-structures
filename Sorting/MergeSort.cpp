@@ -1,7 +1,6 @@
 #include <iostream>
 using namespace std;
 
-// Алгоритм 15: Слияние двух отсортированных подмассивов
 void merge(int A[], int l, int r, int m)
 {
     // Проверка граничных условий
@@ -63,11 +62,9 @@ void merge(int A[], int l, int r, int m)
         A[l + k] = buf[k];
     }
 
-    // Освобождаем память
     delete[] buf;
 }
 
-// Алгоритм 16: Сортировка слиянием
 void mergeSort(int A[], int l, int r)
 {
     if (l >= r)
@@ -75,14 +72,13 @@ void mergeSort(int A[], int l, int r)
         return;
     }
 
-    int m = (r + l) / 2; // Более безопасное вычисление среднего индекса
+    int m = (r + l) / 2;
 
     mergeSort(A, l, m);
     mergeSort(A, m + 1, r);
     merge(A, l, r, m);
 }
 
-// Пример использования
 int main()
 {
     int arr[] = {38, 27, 43, 3, 9, 82, 10};

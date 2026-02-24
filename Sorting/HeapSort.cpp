@@ -1,9 +1,7 @@
 #include <iostream>
-#include <vector>
 using namespace std;
 
-// Алгоритм 13: Просеивание i-ого элемента в куче
-void siftDown(vector<int> &A, int i, int N)
+void siftDown(int A[], int i, int N)
 {
     while (true)
     {
@@ -35,8 +33,7 @@ void siftDown(vector<int> &A, int i, int N)
     }
 }
 
-// Алгоритм 14: Пирамидальная сортировка
-void heapSort(vector<int> &A, int N)
+void heapSort(int A[], int N)
 {
     // строим пирамиду (цикл для i = N/2 до 0)
     for (int i = N / 2; i >= 0; i--)
@@ -52,28 +49,26 @@ void heapSort(vector<int> &A, int N)
     }
 }
 
-// Вспомогательная функция для вывода массива
-void printArray(const vector<int> &A)
-{
-    for (int val : A)
-    {
-        cout << val << " ";
-    }
-    cout << endl;
-}
-
 int main()
 {
-    vector<int> arr = {12, 11, 13, 5, 6, 7};
-    int N = arr.size();
+    int arr[] = {12, 11, 13, 5, 6, 7};
+    int N = sizeof(arr) / sizeof(arr[0]);
 
     cout << "Исходный массив: ";
-    printArray(arr);
+    for (int i = 0; i < N; i++)
+    {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
 
     heapSort(arr, N);
 
     cout << "Отсортированный массив: ";
-    printArray(arr);
+    for (int i = 0; i < N; i++)
+    {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
 
     return 0;
 }

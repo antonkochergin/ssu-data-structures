@@ -5,7 +5,6 @@
 using namespace std;
 using namespace std::chrono;
 
-// Алгоритм 15: Слияние двух отсортированных подмассивов
 void merge(int A[], int l, int r, int m)
 {
     // Проверка граничных условий
@@ -67,11 +66,9 @@ void merge(int A[], int l, int r, int m)
         A[l + k] = buf[k];
     }
 
-    // Освобождаем память
     delete[] buf;
 }
 
-// Алгоритм 16: Сортировка слиянием
 void mergeSort(int A[], int l, int r)
 {
     if (l >= r)
@@ -86,7 +83,6 @@ void mergeSort(int A[], int l, int r)
     merge(A, l, r, m);
 }
 
-// Функция для заполнения массива случайными числами
 void fillRandom(int A[], int n)
 {
     random_device rd;
@@ -99,7 +95,6 @@ void fillRandom(int A[], int n)
     }
 }
 
-// Функция для копирования массива
 void copyArray(int src[], int dest[], int n)
 {
     for (int i = 0; i < n; i++)
@@ -108,7 +103,6 @@ void copyArray(int src[], int dest[], int n)
     }
 }
 
-// Функция для тестирования
 void testMergeSort()
 {
     cout << "2. СОРТИРОВКА СЛИЯНИЕМ (MERGESORT)\n";
@@ -120,7 +114,7 @@ void testMergeSort()
     for (int size : sizes)
     {
         cout << size << " элементов\n";
-        cout << "<table>Запуск\tВремя выполнения\n";
+        cout << "Запуск\tВремя выполнения\n";
 
         // Создаем исходный массив
         int *originalArr = new int[size];
@@ -147,7 +141,7 @@ void testMergeSort()
         }
 
         double average = totalTime / runs;
-        cout << "</table>\n\n";
+        cout << "\n\n";
         cout << "Среднее значение: " << fixed << setprecision(7) << average << "\n\n";
 
         delete[] originalArr;

@@ -5,7 +5,6 @@
 using namespace std;
 using namespace std::chrono;
 
-// Быстрая сортировка (ваша реализация)
 void quickSort(int a[], int left, int right)
 {
     if (left < right)
@@ -34,7 +33,6 @@ void quickSort(int a[], int left, int right)
     }
 }
 
-// Функция для заполнения массива случайными числами
 void fillRandom(int A[], int n)
 {
     random_device rd;
@@ -47,7 +45,6 @@ void fillRandom(int A[], int n)
     }
 }
 
-// Функция для копирования массива
 void copyArray(int src[], int dest[], int n)
 {
     for (int i = 0; i < n; i++)
@@ -56,7 +53,6 @@ void copyArray(int src[], int dest[], int n)
     }
 }
 
-// Функция для тестирования
 void testQuickSort()
 {
     cout << "1. БЫСТРАЯ СОРТИРОВКА (QUICKSORT)\n";

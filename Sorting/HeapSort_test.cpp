@@ -6,7 +6,6 @@
 using namespace std;
 using namespace std::chrono;
 
-// Алгоритм 13: Просеивание i-ого элемента в куче
 void siftDown(vector<int> &A, int i, int N)
 {
     while (true)
@@ -39,7 +38,6 @@ void siftDown(vector<int> &A, int i, int N)
     }
 }
 
-// Алгоритм 14: Пирамидальная сортировка
 void heapSort(vector<int> &A, int N)
 {
     // строим пирамиду (цикл для i = N/2 до 0)
@@ -56,7 +54,6 @@ void heapSort(vector<int> &A, int N)
     }
 }
 
-// Функция для заполнения массива случайными числами
 void fillRandom(vector<int> &A, int n)
 {
     random_device rd;
@@ -70,13 +67,11 @@ void fillRandom(vector<int> &A, int n)
     }
 }
 
-// Функция для копирования массива
 void copyArray(const vector<int> &src, vector<int> &dest)
 {
     dest = src;
 }
 
-// Функция для тестирования
 void testHeapSort()
 {
     cout << "3. ПИРАМИДАЛЬНАЯ СОРТИРОВКА (HEAPSORT)\n";
@@ -88,7 +83,7 @@ void testHeapSort()
     for (int size : sizes)
     {
         cout << size << " элементов\n";
-        cout << "<table>Запуск\tВремя выполнения\n";
+        cout << "Запуск\tВремя выполнения\n";
 
         // Создаем исходный массив
         vector<int> originalArr;
@@ -115,7 +110,7 @@ void testHeapSort()
         }
 
         double average = totalTime / runs;
-        cout << "</table>\n\n";
+        cout << "\n\n";
         cout << "Среднее значение: " << fixed << setprecision(7) << average << "\n\n";
     }
 }
