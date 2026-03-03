@@ -39,4 +39,13 @@
 
 # debug information files
 *.dwo
-x64/
+# Скрытые папки пользователя
+.vs/
+.vscode/
+.idea/
+
+# Результаты сборки
+**/bin/
+**/obj/
+**/Debug/
+**/Release/
