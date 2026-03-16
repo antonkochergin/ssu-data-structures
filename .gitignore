@@ -1,61 +1,143 @@
-# Prerequisites
-*.d
-
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
-
-# Precompiled Headers
-*.gch
-*.pch
-
-# Linker files
-*.ilk
-
-# Debugger Files
-*.pdb
-
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
-
-# Fortran module files
-*.mod
-*.smod
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
-
-# Executables
-*.exe
-*.out
-*.app
-
-# debug information files
-*.dwo
-# Скрытые папки пользователя
-.vs/
+# Редакторы и IDE (общее для всех)
 .vscode/
 .idea/
+*.swp
+*.swo
+*~
+.DS_Store
 
-# Результаты сборки
-**/bin/
-**/obj/
-**/Debug/
-**/Release/
 # Visual Studio
 .vs/
-*.ipch
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+[Dd]ebug/
+[Rr]elease/
+[Oo]bj/
+[Bb]in/
+*.VC.db
+*.VC.opendb
+*.VC.VC.opendb
 *.sln
 *.vcxproj
-*.vcxproj.filters
-Debug/
-Release/
-x64/
-x86/
+*.filters
+*.user
+
+# Папки сборки
+[Dd]ebug*/
+[Rr]elease*/
+[Oo]utput/
+[Bb]uild/
+[Bb]uilds/
+cmake-build-*/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+CTestTestfile.cmake
+CMakeUserPresets.json
+*.cmake
+!_deps/
+
+# Объектные и исполняемые файлы
+*.o
+*.obj
+*.exe
+*.dll
+*.so
+*.dylib
+*.lib
+*.a
+*.out
+*.app
+*.pdb
+*.ilk
+*.exp
+*.idb
+*.ipdb
+*.iobj
+*.tlog
+*.log
+*.manifest
+*.tmp
+*.temp
+*.exe.manifest
+*.exe.intermediate.manifest
+
+# Файлы отладки
+*.pdb
+*.ilk
+*.idb
+*.ipdb
+*.iobj
+[Dd]ump/
+logs/
+
+# C++ конкретные
+*.sbr
+*.bsc
+*.ncb
+*.aps
+*.opt
+*.plg
+*.pch
+*.res
+*.resx
+*.resources
+*.tlb
+*.tlh
+*.bak
+*.old
+*.orig
+
+# Qt
+*.moc
+moc_*.cpp
+moc_*.h
+qrc_*.cpp
+ui_*.h
+*.qmake.cache
+*.qmake.stash
+Makefile.Debug
+Makefile.Release
+*-build-*
+
+# Библиотеки
+*.lib
+*.dll
+*.so
+*.dylib
+*.a
+
+# Тесты
+Testing/
+test_*.log
+test_results.xml
+*.test
+CTestCostData.txt
+last_test.log
+
+# Документация
+docs/html/
+docs/latex/
+docs/_build/
+
+# Valgrind
+*.cache
+*.out
+*.memcheck
+*.massif
+*.callgrind
+*.cachegrind
+
+# Прочее
+*.stackdump
+*.gcda
+*.gcno
+*.gcov
+*.dSYM/
+*.dYSM/
+*.debug
+*.ids
+*.su
