@@ -316,7 +316,6 @@ void delete_case5(tree*& tr, tree* X) {
 }
 
 void delete_case6(tree*& tr, tree* X) {
-    // Алгоритм 17: брат чёрный, "противоположный" племянник красный
     tree* S = sibling(X);
     if (S) {
         S->color = X->parent->color;
@@ -343,11 +342,10 @@ tree* find_min(tree* node) {
 }
 
 void delete_node(tree*& tr, int value) {
-    // Алгоритм 19: удаление узла
     tree* X = search(tr, value);
     if (!X) return;
 
-    // Случай 1: два ребёнка
+    
     if (X->left && X->right) {
         tree* buf;
         if (X->inf <= tr->inf)
@@ -361,7 +359,7 @@ void delete_node(tree*& tr, int value) {
         buf->inf = temp;
         X = buf; // теперь удаляем buf
     }
-    // Случай 2: один ребёнок
+    
     if ((X->left && !X->right) || (!X->left && X->right)) {
         tree* ch = X->left ? X->left : X->right;
         replace(tr, X);
@@ -375,7 +373,7 @@ void delete_node(tree*& tr, int value) {
         return;
     }
 
-    // Случай 3: нет детей
+
     if (!X->left && !X->right) {
         if (X->color == BLACK) {
             delete_case1(tr, X);
@@ -397,21 +395,21 @@ void delete_node(tree*& tr, int value) {
 int main() {
     setlocale(LC_ALL, "RU");
     //вставка элементов в дерево
-    vector<int> nums = { 18, 45, 30, 15,20,25,28,27,26,32,33,35 };
+    vector<int> nums = { 18, 30, 40,45,43,44,38,36,37,34,31,32 };
     for (int num : nums) {
         insert(num);
     }
 
-    cout << "Визуализация дерева после вставки: " << endl;
+    cout << "Вывод : " << endl;
     print();
     cout << "\n\n\n";
 
-    cout << "Удаляем элемент 18:" << endl;
-    delete_node(root, 18);
+    cout << "Удаляем :" << endl;
+    delete_node(root, 38);
     print();
     cout << "\n\n\n";
 
-    cout << "Удаляем элемент 30:" << endl;
+    cout << "Удаление :" << endl;
     delete_node(root, 30);
     print();
     cout << "\n\n\n";
