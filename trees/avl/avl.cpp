@@ -201,7 +201,7 @@ int main() {
     tree* root = NULL;
 
    
-    int my_numbers[] = { 10, 20, 30, 25, 5, 15, 35 }; 
+    int my_numbers[] = { 10, 20, 40,30,27,25,24,23,21,45,43,44 };
     int n = sizeof(my_numbers) / sizeof(my_numbers[0]); 
 
     cout << "Исходный массив: ";
@@ -215,14 +215,16 @@ int main() {
     print(root);
     cout << "\n";
 
-    int x = 18; 
-    cout << "\nвставка элемента " << x << ":\n";
-    root = insert(root, x);
-    cout << "\nдерево после вставки " << x << ":\n";
+
+
+    int y = 30; 
+    cout << "\nудаление узла " << y << ":\n";
+    root = remove(root, y);
+    cout << "\nдерево после удаления " << y << ":\n";
     print(root);
 
- 
-    int y = 20; 
+
+    y = 27;
     cout << "\nудаление узла " << y << ":\n";
     root = remove(root, y);
     cout << "\nдерево после удаления " << y << ":\n";
